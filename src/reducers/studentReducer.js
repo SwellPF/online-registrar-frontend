@@ -1,7 +1,9 @@
 export default function studentReducer(state = {students: []}, action ) {
+   switch(action.type) {
+       case 'ADD_STUDENT':
+           return {...state, students: [...state.students, action.payload]}
    
-   
-   
-   
-    return state;
+        default:
+            return state;
+    }
 }

@@ -1,10 +1,11 @@
 import React from 'react';
-import CoursesContainer from '../containers/CoursesContainer';
+import Course from './Course';
 
-const Courses = (props) => {
+const Courses = props => {
+    const courses = props.courses.map(course => <Course key={course.id} {...course}/>);
     return (
         <div>
-            Courses
+            {courses}
         </div>
     )
 

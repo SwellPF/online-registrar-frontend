@@ -1,5 +1,4 @@
 import React from 'react';
-import StudentsContainer from '../containers/StudentsContainer';
 
 const Students = (props) => {
     return (

@@ -1,6 +1,7 @@
 import React from 'react';
-import Students from './components/Students';
-import StudentInput from './components/StudentsInput';
+import Students from '../components/Students';
+import StudentInput from '../components/StudentInput';
+import {connect} from 'react-redux';
 
 
 class StudentsContainer extends React.Component {
@@ -11,6 +12,7 @@ class StudentsContainer extends React.Component {
         return (
             <div>
                <StudentInput />
+               <br></br>
                <Students />
             </div>
 
@@ -20,4 +22,4 @@ class StudentsContainer extends React.Component {
 
 }
 
-export default StudentsContainer;
+export default connect()(StudentsContainer);

@@ -1,16 +1,19 @@
 import React from 'react';
-import Courses from './components/Courses';
+import Courses from '../components/Courses';
+import {connect} from 'react-redux';
+import {fetchCourses} from '../actions/fetchCourses';
 
 
 class CoursesContainer extends React.Component {
 
-
+componentDidMount() {
+    this.props.fetchCourses()
+}
 
     render() {
         return (
             <div>
-               <Courses />
-               CoursesContainer 
+               <Courses courses={this.props.courses}/>
             </div>
 
         )
@@ -19,6 +22,12 @@ class CoursesContainer extends React.Component {
 
 }
 
-export default CoursesContainer;
+const mapStateToProps = state => {
+    return {
+        courses: state.courses
+    }
+}
+
+export default connect(mapStateToProps, {fetchCourses})(CoursesContainer);
 
 
