@@ -6,12 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
+import studentReducer from './reducers/studentReducer';
 
+const store = createStore(studentReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
