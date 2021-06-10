@@ -3,9 +3,9 @@ import CoursesContainer from './containers/CoursesContainer';
 import StudentsContainer from './containers/StudentsContainer';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import NavBar from './NavBar';
-import Welcome from './Welcome';
-import Questions from './Questions';
-import Login from './Login';
+import Welcome from './components/Welcome';
+import Questions from './components/Questions';
+import Login from './components/Login';
 
 class App extends React.Component {
   
@@ -15,7 +15,7 @@ class App extends React.Component {
       <Router>
         <div className = "App">
           <NavBar />
-            <Route exact path='/' component={Home}/>
+            {/* <Route exact path='/' component={Home}/> */}
             <Route exact path='Welcome' component={Welcome}/>
             <Route exact path='Questions' component={Questions}/>
             <Route exact path='Login' component={Login}/>
